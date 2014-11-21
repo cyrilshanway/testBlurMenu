@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface testBlurViewController : UIViewController
 
-
+@property (nonatomic, retain)UIView *bgView;
 @end
 

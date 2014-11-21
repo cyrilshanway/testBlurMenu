@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "testBlurViewController.h"
+#import "firstViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    firstViewController *homeCtrllr = [storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
+    
+    //firstViewController *homeCtrllr = [[firstViewController alloc] init];
+    
+    
+    UINavigationController *controller = [[UINavigationController alloc]initWithRootViewController:homeCtrllr];
+    self.window.rootViewController = controller;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
